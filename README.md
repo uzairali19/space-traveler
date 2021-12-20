@@ -9,6 +9,7 @@
 - CSS
 - React
 - React Router Dom
+- Redux
 
 ## Getting Started
 
