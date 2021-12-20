@@ -20,7 +20,7 @@ Run
 
 ```bash
 # To clone the git repositories
-git clone https://github.com/uzairali19/space-travelers.git
+git clone https://github.com/uzairali19/space-traveler.git
 
 # To install dependencies 
 npm install 
@@ -64,7 +64,7 @@ npx eslint .
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/uzairali19/space-travelers/issues/).
+Feel free to check the [issues page](https://github.com/uzairali19/space-traveler/issues/).
 
 ## Show your support
 
