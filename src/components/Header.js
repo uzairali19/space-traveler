@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
@@ -15,9 +16,23 @@ const Header = () => (
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#Rockets">Rockets</Nav.Link>
-            <Nav.Link href="#Missions">Missions</Nav.Link>
+          <Nav>
+            <NavLink
+              activeclassname="active"
+              to="/rockets"
+              className="nav-item"
+            >
+              Rockets
+            </NavLink>
+          </Nav>
+          <Nav>
+            <NavLink
+              activeclassname="active"
+              to="/missions"
+              className="nav-item"
+            >
+              Missions
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

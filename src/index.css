@@ -16,3 +16,18 @@
 .logo-image > p {
   font-size: 40px;
 }
+
+.nav-item {
+  text-decoration: none;
+  padding: 8px;
+  color: black;
+}
+
+.nav-item:focus {
+  color: rgb(41, 37, 37);
+  text-decoration: underline;
+}
+
+.nav-item:hover {
+  color: black;
+}
