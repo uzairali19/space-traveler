@@ -1,3 +1,18 @@
 * {
   margin: 0;
+  font-family: sans-serif;
+}
+
+.logo-image {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-image > img {
+  width: 80px;
+}
+
+.logo-image > p {
+  font-size: 40px;
 }
