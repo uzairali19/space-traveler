@@ -2,17 +2,32 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
-import { beMemeber, getMissionFromDatabae } from '../redux/missions/missions';
+import {
+  beMemeber,
+  getMissionFromDatabae,
+  removeMemebership,
+} from '../redux/missions/missions';
 
 const Missions = () => {
   const dispatch = useDispatch();
   const allMissions = useSelector((state) => state.missionReducer);
 
-  const changeMembership = (id) => {
-    allMissions.filter((mission) =>
-      mission.mission_id === id ? (mission.isMember = true) : mission,
-    );
+  const joinMembership = (id) => {
+    allMissions.filter((mission) => (mission.mission_id === id ? (mission.isMember = true) : mission));
     dispatch(beMemeber(allMissions));
+  };
+
+  const leaveMembership = (id) => {
+    allMissions.filter((mission) => (mission.mission_id === id ? (mission.isMember = false) : mission));
+    dispatch(removeMemebership(allMissions));
+  };
+
+  const missionHandler = (mission) => {
+    if (mission.isMember) {
+      leaveMembership(mission.mission_id);
+    } else {
+      joinMembership(mission.mission_id);
+    }
   };
 
   useEffect(() => {
@@ -41,15 +56,17 @@ const Missions = () => {
               <td className="m-btn">
                 <Button variant="secondary">
                   {mission.isMember ? 'active member' : 'Not a member'}
-                </Button>{' '}
+                </Button>
+                {' '}
               </td>
-              <td
-                className="btn"
-                onClick={() => changeMembership(mission.mission_id)}
-              >
-                <Button variant="success">
+              <td className="btn">
+                <Button
+                  variant="success"
+                  onClick={() => missionHandler(mission)}
+                >
                   {mission.isMember ? 'Leave mission' : 'Join mission'}
-                </Button>{' '}
+                </Button>
+                {' '}
               </td>
             </tr>
           ))}
