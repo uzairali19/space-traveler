@@ -31,3 +31,8 @@
 .nav-item:hover {
   color: black;
 }
+
+.btn,
+.m-btn {
+  width: 150px;
+}
