@@ -8,17 +8,26 @@ import {
   removeMemebership,
 } from '../redux/missions/missions';
 
+function changeMission(mission, bool, id) {
+  if (mission.mission_id === id) {
+    mission.isMember = bool;
+  } else {
+    return mission;
+  }
+  return null;
+}
+
 const Missions = () => {
   const dispatch = useDispatch();
   const allMissions = useSelector((state) => state.missionReducer);
 
   const joinMembership = (id) => {
-    allMissions.filter((mission) => (mission.mission_id === id ? (mission.isMember = true) : mission));
+    allMissions.filter((mission) => changeMission(mission, true, id));
     dispatch(beMemeber(allMissions));
   };
 
   const leaveMembership = (id) => {
-    allMissions.filter((mission) => (mission.mission_id === id ? (mission.isMember = false) : mission));
+    allMissions.filter((mission) => changeMission(mission, false, id));
     dispatch(removeMemebership(allMissions));
   };
 
@@ -55,7 +64,7 @@ const Missions = () => {
               <td>{mission.description}</td>
               <td className="m-btn">
                 <Button variant="secondary">
-                  {mission.isMember ? 'active member' : 'Not a member'}
+                  {mission.isMember ? 'Active member' : 'Not a member'}
                 </Button>
                 {' '}
               </td>
