@@ -7,24 +7,17 @@ export const getMission = (payload) => ({
   payload,
 });
 
-export const getMissionFromDatabae = () => async (dispatch) => dispatch(
-  getMission(
-    await (await fetch('https://api.spacexdata.com/v3/missions')).json(),
-  ),
-);
+export const getMissionFromDatabae = () => async (dispatch) =>
+  dispatch(
+    getMission(
+      await (await fetch('https://api.spacexdata.com/v3/missions')).json(),
+    ),
+  );
 
 const missionReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_MISSION:
-      console.log(action.payload);
-      return [...state, action.payload];
-    // Object.values(action.payload).map(([key, value]) => {
-    //   const [mission] = value;
-    //   return {
-    //     item_id: key,
-    //     ...mission,
-    //   };
-    // });
+      return action.payload;
     default:
       return state;
   }
