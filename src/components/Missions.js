@@ -4,7 +4,9 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import {
   beMemeber,
+  getMission,
   getMissionFromDatabae,
+  // getMissionFromDatabae,
   removeMemebership,
 } from '../redux/missions/missions';
 
@@ -63,10 +65,7 @@ const Missions = () => {
               </td>
               <td>{mission.description}</td>
               <td className="m-btn">
-                <Button variant="secondary">
-                  {mission.isMember ? 'Active member' : 'Not a member'}
-                </Button>
-                {' '}
+                <p>{mission.isMember ? 'Active member' : 'Not a member'}</p>
               </td>
               <td className="btn">
                 <Button
@@ -74,8 +73,7 @@ const Missions = () => {
                   onClick={() => missionHandler(mission)}
                 >
                   {mission.isMember ? 'Leave mission' : 'Join mission'}
-                </Button>
-                {' '}
+                </Button>{' '}
               </td>
             </tr>
           ))}
