@@ -3,6 +3,7 @@ import { v4 } from 'uuid';
 import Carousel from 'react-bootstrap/Carousel';
 import PropTypes from 'prop-types';
 import Reserve from './RocketReserve';
+import ResBadge from './reserveBadge';
 
 const Rocket = ({ rockets }) => (
   <div className="rocket-container">
@@ -28,6 +29,7 @@ const Rocket = ({ rockets }) => (
           </div>
           <div className="rocket-info">
             <h1>{rocket.rocket_name}</h1>
+            <ResBadge badgeId={rocket.id} />
             <p>{rocket.description}</p>
             <Reserve reserveId={rocket.id} />
           </div>
