@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import {
   postReserve,
@@ -16,29 +16,33 @@ const Reserve = ({ reserveId }) => {
 
   const submitReserve = (e) => {
     e.preventDefault();
+
     const resId = reserveId.toString();
     if (e.target.id === resId && input.reserve === false) {
       setInput({
         reserve: true,
-        status: 'Reserved',
+        status: 'Cancel Reservation',
       });
-    }
-    if (e.target.id === resId && input.reserve === true) {
+      const inputReserve = {
+        id: reserveId,
+        reserve: input.reserve,
+        status: input.status,
+      };
+      dispatch(postReserve(inputReserve));
+    } else if (e.target.id === resId && input.reserve === true) {
       setInput({
         reserve: false,
         status: 'Reserve Rocket',
       });
+      const inputReserve = {
+        id: reserveId,
+        reserve: input.reserve,
+        status: input.status,
+      };
+      dispatch(deleteReserve(inputReserve.id));
     }
-    const inputReserve = {
-      id: reserveId,
-      reserve: input.reserve,
-      status: input.status,
-    };
-    dispatch(postReserve(inputReserve));
   };
 
-  const reservations = useSelector((state) => state.reserveReducer);
-  console.log(reservations);
   return (
     <>
       <input
