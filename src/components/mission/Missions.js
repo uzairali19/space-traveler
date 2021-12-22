@@ -4,11 +4,9 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import {
   beMemeber,
-  // getMission,
   getMissionFromDatabae,
-  // getMissionFromDatabae,
   removeMemebership,
-} from '../redux/missions/missions';
+} from '../../redux/missions/missions';
 
 function changeMission(mission, bool, id) {
   if (mission.mission_id === id) {
@@ -35,10 +33,8 @@ const Missions = () => {
 
   const missionHandler = (mission) => {
     if (mission.isMember) {
-      // dispatch(removeMemebership(mission.mission_id));
       leaveMembership(mission.mission_id);
     } else {
-      // dispatch(beMemeber(mission.mission_id));
       joinMembership(mission.mission_id);
     }
   };
