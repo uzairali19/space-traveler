@@ -30,11 +30,11 @@ export const getMissionFromDatabae = () => async (dispatch) => {
 const missionReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_MISSION:
-      return action.payload.map((mission) => ({
+      return action.payload.map((missions) => ({
         isMember: false,
-        mission_id: mission.mission_id,
-        mission_name: mission.mission_name,
-        description: mission.description,
+        mission_id: missions.mission_id,
+        mission_name: missions.mission_name,
+        description: missions.description,
       }));
     case BE_A_MEMBER:
       return state.map((missions) => {

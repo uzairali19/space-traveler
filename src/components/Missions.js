@@ -4,7 +4,7 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import {
   beMemeber,
-  getMission,
+  // getMission,
   getMissionFromDatabae,
   // getMissionFromDatabae,
   removeMemebership,
@@ -35,8 +35,10 @@ const Missions = () => {
 
   const missionHandler = (mission) => {
     if (mission.isMember) {
+      // dispatch(removeMemebership(mission.mission_id));
       leaveMembership(mission.mission_id);
     } else {
+      // dispatch(beMemeber(mission.mission_id));
       joinMembership(mission.mission_id);
     }
   };
