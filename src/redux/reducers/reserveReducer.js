@@ -18,7 +18,7 @@ const reserveReducer = (state = initialState, action) => {
     case POST_RESERVE:
       return [...state, action.payload];
     case DELETE_RESERVE:
-      return [...state.filter((res) => res.id !== action.payload)];
+      return [...state.filter((rocket) => rocket.id !== action.payload)];
     default:
       return state;
   }

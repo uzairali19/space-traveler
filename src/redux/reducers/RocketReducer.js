@@ -3,7 +3,9 @@ const GET_ROCKETS = 'GET_ROCKETS';
 const initialState = [];
 
 export const getRockets = () => async (res) => {
-  const data = await fetch(api).then((dat) => dat.json());
+  const data = await fetch(api)
+    .then((data) => data.json())
+    .catch((err) => err);
   if (data) {
     res({
       type: GET_ROCKETS,
