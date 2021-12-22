@@ -73,7 +73,8 @@ const Missions = () => {
                   onClick={() => missionHandler(mission)}
                 >
                   {mission.isMember ? 'Leave mission' : 'Join mission'}
-                </Button>{' '}
+                </Button>
+                {' '}
               </td>
             </tr>
           ))}
