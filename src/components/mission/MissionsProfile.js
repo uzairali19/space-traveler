@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
+import Table from 'react-bootstrap/Table';
 
 const Profile = () => {
   const allMissions = useSelector((state) => state.missionReducer);
@@ -9,15 +10,32 @@ const Profile = () => {
   const noMissions = joinedMissions <= 0;
 
   return (
-    <div className="profile-rocket f-col">
-      <h2 className="rocket-profile-header">My Missions</h2>
-      <section className="profile-rocket-cont">
-        {noMissions && <p>No Missions joined</p>}
-        {joinedMissions.map((missions) => (
-          <p className="rocket-profile-name" key={missions.mission_id}>
-            {missions.mission_name}
-          </p>
-        ))}
+    <div>
+      <h2>My Missions</h2>
+      <section>
+        <Table striped bordered hover size="sm">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Missions</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {noMissions && (
+              <tr>
+                <td className="text-center danger">No Missions joined</td>
+              </tr>
+            )}
+            {joinedMissions.map((missions) => (
+              <tr key={missions.mission_id}>
+                <td>{missions.mission_id}</td>
+                <td>{missions.mission_name}</td>
+                <td className="success">Joined</td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
       </section>
     </div>
   );

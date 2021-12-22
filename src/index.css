@@ -36,3 +36,11 @@
 .m-btn {
   width: 150px;
 }
+
+.success {
+  color: green;
+}
+
+.danger {
+  color: red;
+}

@@ -63,11 +63,13 @@ const Missions = () => {
               </td>
               <td>{mission.description}</td>
               <td className="m-btn">
-                <p>{mission.isMember ? 'Active member' : 'Not a member'}</p>
+                <p className={mission.isMember ? 'success' : 'danger'}>
+                  {mission.isMember ? 'Active member' : 'Not a member'}
+                </p>
               </td>
               <td className="btn">
                 <Button
-                  variant="success"
+                  variant={mission.isMember ? 'danger' : 'success'}
                   onClick={() => missionHandler(mission)}
                 >
                   {mission.isMember ? 'Leave mission' : 'Join mission'}

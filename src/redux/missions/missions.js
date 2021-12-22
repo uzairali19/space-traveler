@@ -30,12 +30,7 @@ export const getMissionFromDatabae = () => async (dispatch) => {
 const missionReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_MISSION:
-      return action.payload.map((missions) => ({
-        isMember: false,
-        mission_id: missions.mission_id,
-        mission_name: missions.mission_name,
-        description: missions.description,
-      }));
+      return action.payload;
     case BE_A_MEMBER:
       return state.map((missions) => {
         if (missions.mission_id === action.payload) {
