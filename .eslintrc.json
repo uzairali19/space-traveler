@@ -24,7 +24,8 @@
     "no-unused-vars": "off",
     "import/extensions": "off",
     "no-param-reassign": [2, { "props": false }],
-    "react/self-closing-comp": "off"
+    "react/self-closing-comp": "off",
+    "indent": "off"
   },
   "ignorePatterns": ["dist/", "build/"]
 }

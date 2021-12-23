@@ -31,7 +31,7 @@ const Rocket = ({ rockets }) => (
             <h1>{rocket.rocket_name}</h1>
             <ResBadge badgeId={rocket.id} />
             <p>{rocket.description}</p>
-            <Reserve reserveId={rocket.id} />
+            <Reserve reserveId={rocket.id} rocketName={rocket.rocket_name} />
           </div>
         </div>
       );
