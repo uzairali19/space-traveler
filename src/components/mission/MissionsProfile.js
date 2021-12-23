@@ -10,7 +10,7 @@ const Profile = () => {
   const noMissions = joinedMissions <= 0;
 
   return (
-    <div>
+    <div className="container">
       <h2>My Missions</h2>
       <section>
         <Table striped bordered hover size="sm">
@@ -24,7 +24,8 @@ const Profile = () => {
           <tbody>
             {noMissions && (
               <tr>
-                <td className="text-center danger">No Missions joined</td>
+                <td className="text-center">No Missions joined</td>
+                <td className="text-center">No Missions joined</td>
               </tr>
             )}
             {joinedMissions.map((missions) => (
