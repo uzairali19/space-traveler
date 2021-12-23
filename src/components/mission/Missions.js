@@ -10,7 +10,7 @@ import {
 
 function changeMission(mission, bool, id) {
   if (mission.mission_id === id) {
-    mission.isMember = bool;
+    mission.reserved = bool;
   } else {
     return mission;
   }
@@ -32,7 +32,7 @@ const Missions = () => {
   };
 
   const missionHandler = (mission) => {
-    if (mission.isMember) {
+    if (mission.reserved) {
       leaveMembership(mission.mission_id);
     } else {
       joinMembership(mission.mission_id);
@@ -63,18 +63,17 @@ const Missions = () => {
               </td>
               <td>{mission.description}</td>
               <td className="m-btn">
-                <p className={mission.isMember ? 'success' : 'danger'}>
-                  {mission.isMember ? 'Active member' : 'Not a member'}
+                <p className={mission.reserved ? 'success' : 'danger'}>
+                  {mission.reserved ? 'Active member' : 'Not a member'}
                 </p>
               </td>
               <td className="btn">
                 <Button
-                  variant={mission.isMember ? 'danger' : 'success'}
+                  variant={mission.reserved ? 'danger' : 'success'}
                   onClick={() => missionHandler(mission)}
                 >
-                  {mission.isMember ? 'Leave mission' : 'Join mission'}
-                </Button>
-                {' '}
+                  {mission.reserved ? 'Leave mission' : 'Join mission'}
+                </Button>{' '}
               </td>
             </tr>
           ))}

@@ -5,7 +5,7 @@ import Table from 'react-bootstrap/Table';
 const Profile = () => {
   const allMissions = useSelector((state) => state.missionReducer);
   const joinedMissions = allMissions.filter(
-    (missions) => missions.isMember === true,
+    (missions) => missions.reserved === true,
   );
   const noMissions = joinedMissions <= 0;
 

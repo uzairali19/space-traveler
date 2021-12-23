@@ -36,7 +36,7 @@ const missionReducer = (state = initialState, action) => {
         if (missions.mission_id === action.payload) {
           return {
             ...missions,
-            isMember: true,
+            reserved: true,
           };
         }
         return missions;
@@ -46,7 +46,7 @@ const missionReducer = (state = initialState, action) => {
         if (missions.mission_id === action.payload) {
           return {
             ...missions,
-            isMember: false,
+            reserved: false,
           };
         }
         return missions;
