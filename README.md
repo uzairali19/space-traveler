@@ -2,6 +2,14 @@
 
 > This app will use React and Redux, Along with React Router. So, the app would be a SPA with the store object attached to the index.js component. Which would then be used by all of the components to make use and manupulate the data
 
+## Screenshot
+![image](https://user-images.githubusercontent.com/27709832/147372692-28a4fc07-2e8b-4839-853a-6e7239785e8d.png)
+`Rockets screenshot`
+![image](https://user-images.githubusercontent.com/27709832/147372710-06242ce5-70ef-4476-8079-393a40bcbb8f.png)
+`Missions screenshot`
+![image](https://user-images.githubusercontent.com/27709832/147372735-de5ac9db-5d9b-43c2-860b-930172b95a23.png)
+`My profile screenshot`
+
 ## Built With
 
 - Javascript
