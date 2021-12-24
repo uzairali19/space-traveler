@@ -7,15 +7,20 @@ const MissionsProfile = () => {
   );
 
   return (
-    <div className="container">
+    <div className="col-4">
       <h3>My Missions</h3>
-      {allMissions.map((missions) => (
-        <div key={missions.mission_id}>
-          <p key={missions.mission_id}>
-            {missions.mission_name}
-          </p>
-        </div>
-      ))}
+      <ul className="rockets">
+        {allMissions.map((missions) => (
+          <li
+            className="rocket-list"
+            key={missions.mission_id}
+          >
+            <p className="rocket-item">
+              {missions.mission_name}
+            </p>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
