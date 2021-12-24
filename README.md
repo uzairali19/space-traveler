@@ -1,8 +1,9 @@
 # Space Travelers
 
-> This app will use React and Redux, Along with React Router. So, the app would be a SPA with the store object attached to the index.js component. Which would then be used by all of the components to make use and manupulate the data
+> This app uses React and Redux, Along with React Router for data manipulation from a couple of web services. It is a SPA with the store object attached to the index.js component used by all of the components to make use and manupulate the data.
 
 ## Screenshot
+
 ![image](https://user-images.githubusercontent.com/27709832/147372692-28a4fc07-2e8b-4839-853a-6e7239785e8d.png)
 `Rockets screenshot`
 ![image](https://user-images.githubusercontent.com/27709832/147372710-06242ce5-70ef-4476-8079-393a40bcbb8f.png)
@@ -25,21 +26,21 @@ To get a local copy up and running follow these simple example steps.
 
 ### Setup
 
-Run 
+Run
 
 ```bash
 # To clone the git repositories
 git clone https://github.com/uzairali19/space-traveler.git
 
-# To install dependencies 
-npm install 
+# To install dependencies
+npm install
 
 # To run development branch
 npm run start
 
 # To build the project
-npm run build 
-````
+npm run build
+```
 
 ### Run tests
 

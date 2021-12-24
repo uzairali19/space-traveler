@@ -1,6 +1,7 @@
 {
   "name": "space-travelers",
   "version": "0.1.0",
+  "homepage": "http://uzairali19.github.io/space-traveler/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
