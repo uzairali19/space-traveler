@@ -5,6 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import Image from 'react-bootstrap/Image';
 import planet from '../assets/planet.png';
+import { getMissionFromDatabae } from '../redux/missions/missions';
 
 const Header = () => (
   <div className="header">
@@ -30,6 +31,7 @@ const Header = () => (
               activeclassname="active"
               to="/missions"
               className="nav-item"
+              onLoad={getMissionFromDatabae}
             >
               Missions
             </NavLink>

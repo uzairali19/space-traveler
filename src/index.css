@@ -32,6 +32,19 @@
   color: black;
 }
 
+.btn,
+.m-btn {
+  width: 150px;
+}
+
+.success {
+  color: green;
+}
+
+.danger {
+  color: red;
+}
+
 .rocket-container {
   display: flex;
   flex-direction: column;
