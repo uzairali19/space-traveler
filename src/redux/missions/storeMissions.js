@@ -13,7 +13,7 @@ export const leaveMission = (payload) => ({
   payload,
 });
 
-const add_remove_reducer = (state = initialState, action) => {
+const addRemover = (state = initialState, action) => {
   switch (action.type) {
     case ADD_MISSIONS:
       return [...state, action.payload];
@@ -24,4 +24,4 @@ const add_remove_reducer = (state = initialState, action) => {
   }
 };
 
-export default add_remove_reducer;
+export default addRemover;

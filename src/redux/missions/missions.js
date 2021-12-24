@@ -1,6 +1,4 @@
 const GET_MISSION = 'space-traveler/scr/redux/missions/GET_MISSON';
-const BE_A_MEMBER = 'space-traveler/scr/redux/missions/BE_A_MEMBER';
-const LEAVE_MISSION = 'space-traveler/scr/redux/missions/LEAVE_MISSION';
 
 const initialState = [];
 

@@ -7,13 +7,8 @@ import JoinMission from './JoinMission';
 import MissionMember from './MissionMember';
 
 const Missions = () => {
-
   const dispatch = useDispatch();
   const allMissions = useSelector((state) => state.missionReducer);
-
-
-
-
 
   useEffect(() => {
     dispatch(getMissionFromDatabae());
@@ -40,13 +35,16 @@ const Missions = () => {
               </td>
               <td>{mission.description}</td>
               <td className="m-btn">
-                <MissionMember joinId={mission.mission_id} missionName={mission.mission_name}/>
+                <MissionMember
+                  joinId={mission.mission_id}
+                  missionName={mission.mission_name}
+                />
               </td>
               <td className="btn">
-              
-              <JoinMission joinId={mission.mission_id} missionName={mission.mission_name}/>
-
-                  
+                <JoinMission
+                  joinId={mission.mission_id}
+                  missionName={mission.mission_name}
+                />
               </td>
             </tr>
           ))}
