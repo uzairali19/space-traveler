@@ -5,7 +5,7 @@ import {
 } from 'redux';
 import logger from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
-import rocketReducer from './reducers/RocketReducer';
+import rocketReducer from './reducers/rocketReducer';
 import reserveReducer from './reducers/reserveReducer';
 import missionReducer from './missions/missions';
 import addRemover from './missions/storeMissions';
