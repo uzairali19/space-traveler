@@ -11,7 +11,10 @@ const Header = () => (
   <div className="header">
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand className="logo-image" href="#home">
+        <Navbar.Brand
+          className="logo-image"
+          href="#home"
+        >
           <Image src={planet} />
           <p>Space Travelers&apos; Hub</p>
         </Navbar.Brand>
@@ -20,7 +23,7 @@ const Header = () => (
           <Nav>
             <NavLink
               activeclassname="active"
-              to="/rockets"
+              to="/"
               className="nav-item"
             >
               Rockets
