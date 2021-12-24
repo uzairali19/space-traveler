@@ -34,6 +34,15 @@ const Header = () => (
               Missions
             </NavLink>
           </Nav>
+          <Nav>
+            <NavLink
+              activeclassname="active"
+              to="/profile"
+              className="nav-item"
+            >
+              Profile
+            </NavLink>
+          </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>

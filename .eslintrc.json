@@ -17,8 +17,15 @@
   "rules": {
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
     "react/react-in-jsx-scope": "off",
+    "react/require-default-props": "off",
+    "react/forbid-prop-types": "off",
     "import/no-unresolved": "off",
-    "no-shadow": "off"
+    "no-shadow": "off",
+    "no-unused-vars": "off",
+    "import/extensions": "off",
+    "no-param-reassign": [2, { "props": false }],
+    "react/self-closing-comp": "off",
+    "indent": "off"
   },
   "ignorePatterns": ["dist/", "build/"]
 }
