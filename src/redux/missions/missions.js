@@ -9,16 +9,6 @@ export const getMission = (payload) => ({
   payload,
 });
 
-export const beMemeber = (payload) => ({
-  type: BE_A_MEMBER,
-  payload,
-});
-
-export const removeMemebership = (payload) => ({
-  type: LEAVE_MISSION,
-  payload,
-});
-
 export const getMissionFromDatabae = () => async (dispatch) => {
   dispatch(
     getMission(
@@ -30,27 +20,12 @@ export const getMissionFromDatabae = () => async (dispatch) => {
 const missionReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_MISSION:
-      return action.payload;
-    case BE_A_MEMBER:
-      return state.map((missions) => {
-        if (missions.mission_id === action.payload) {
-          return {
-            ...missions,
-            reserved: true,
-          };
-        }
-        return missions;
-      });
-    case LEAVE_MISSION:
-      return state.map((missions) => {
-        if (missions.mission_id === action.payload) {
-          return {
-            ...missions,
-            reserved: false,
-          };
-        }
-        return missions;
-      });
+      return action.payload.map((mission) => ({
+        mission_name: mission.mission_name,
+        mission_id: mission.mission_id,
+        reserved: false,
+        description: mission.description,
+      }));
     default:
       return state;
   }

@@ -1,47 +1,24 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Table from 'react-bootstrap/Table';
-import Button from 'react-bootstrap/Button';
-import {
-  beMemeber,
-  getMissionFromDatabae,
-  removeMemebership,
-} from '../../redux/missions/missions';
 
-function changeMission(mission, bool, id) {
-  if (mission.mission_id === id) {
-    mission.reserved = bool;
-  } else {
-    return mission;
-  }
-  return null;
-}
+import { getMissionFromDatabae } from '../../redux/missions/missions';
+import JoinMission from './JoinMission';
+import MissionMember from './MissionMember';
 
 const Missions = () => {
+
   const dispatch = useDispatch();
   const allMissions = useSelector((state) => state.missionReducer);
 
-  const joinMembership = (id) => {
-    allMissions.filter((mission) => changeMission(mission, true, id));
-    dispatch(beMemeber(allMissions));
-  };
 
-  const leaveMembership = (id) => {
-    allMissions.filter((mission) => changeMission(mission, false, id));
-    dispatch(removeMemebership(allMissions));
-  };
 
-  const missionHandler = (mission) => {
-    if (mission.reserved) {
-      leaveMembership(mission.mission_id);
-    } else {
-      joinMembership(mission.mission_id);
-    }
-  };
+
 
   useEffect(() => {
     dispatch(getMissionFromDatabae());
   }, []);
+
   return (
     <div className="container">
       <Table striped bordered hover size="sm">
@@ -63,17 +40,13 @@ const Missions = () => {
               </td>
               <td>{mission.description}</td>
               <td className="m-btn">
-                <p className={mission.reserved ? 'success' : 'danger'}>
-                  {mission.reserved ? 'Active member' : 'Not a member'}
-                </p>
+                <MissionMember joinId={mission.mission_id} missionName={mission.mission_name}/>
               </td>
               <td className="btn">
-                <Button
-                  variant={mission.reserved ? 'danger' : 'success'}
-                  onClick={() => missionHandler(mission)}
-                >
-                  {mission.reserved ? 'Leave mission' : 'Join mission'}
-                </Button>{' '}
+              
+              <JoinMission joinId={mission.mission_id} missionName={mission.mission_name}/>
+
+                  
               </td>
             </tr>
           ))}

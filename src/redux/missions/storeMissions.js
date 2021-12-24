@@ -18,7 +18,7 @@ const add_remove_reducer = (state = initialState, action) => {
     case ADD_MISSIONS:
       return [...state, action.payload];
     case REMOVE_MISSIONS:
-      return [...state.filter((mission) => mission.id === action.payload)];
+      return [...state.filter((mission) => mission.id !== action.payload)];
     default:
       return state;
   }
