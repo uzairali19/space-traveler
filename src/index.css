@@ -44,3 +44,49 @@
 .danger {
   color: red;
 }
+
+.rocket-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.rocket {
+  display: flex;
+  gap: 20px;
+}
+
+.carousel {
+  width: 300px;
+}
+
+.rocket-info > h1 {
+  font-size: 30px;
+  font-family: monospace;
+}
+
+.rocket-info > p {
+  font-size: 15px;
+  font-family: monospace;
+}
+
+.rocket-info > input {
+  background: #339dff;
+  color: #fff;
+  font-size: 13px;
+  line-height: 38px;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  width: 170px;
+  text-align: center;
+  border: none;
+  margin-top: 10px;
+}
+
+.rocket-info > input:hover {
+  background: #fff;
+  color: #339dff;
+  box-shadow: 0 4px 4px rgba(83, 100, 255, 0.32);
+}

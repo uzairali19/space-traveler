@@ -42,7 +42,7 @@ const Header = () => (
               to="/profile"
               className="nav-item"
             >
-              My Profile
+              Profile
             </NavLink>
           </Nav>
         </Navbar.Collapse>
